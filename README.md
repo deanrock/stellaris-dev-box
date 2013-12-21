@@ -27,7 +27,7 @@ Download SW-EK-LM4F120XL-9453.exe from [http://www.ti.com/tool/sw-ek-lm4f120xl](
 
 SSH into machine:
     
-    $vagrant ssh
+    $ vagrant ssh
 
 Install required packages:
 

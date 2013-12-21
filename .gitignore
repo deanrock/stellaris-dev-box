@@ -1,2 +1,9 @@
+*
 *.exe
 .vagrant/
+
+! example-project/
+! .gitignore
+! bootstrap.sh
+! Vagrantfile
+! README.md

@@ -15,8 +15,13 @@ OBJS = $(SRC:.c=.o)
 all: required_files $(OBJS) ${PROJECT_NAME}
 
 required_files:
+ifeq ($(wildcard blink.ld),)
 	cp ~/stellarisware/boards/ek-lm4f120xl/blinky/blinky.ld blink.ld
-	cp ~/stellarisware/boards/ek-lm4f120xl/blinky/startup_gcc.c .
+endif
+
+ifeq ($(wildcard startup_gcc.c),)
+	cp ~/stellarisware/boards/ek-lm4f120xl/blinky/startup_gcc.c startup_gcc.c
+endif
 
 %.o: %.c
 	$(CC) ${<} -g -mthumb -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -Os -ffunction-sections -fdata-sections -MD -std=c99 -Wall -pedantic -DPART_LM4F120H5QR -c -I${STELLARISWARE}  -DTARGET_IS_BLIZZARD_RA1  -o ${@}
