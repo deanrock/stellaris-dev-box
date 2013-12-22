@@ -1,5 +1,4 @@
-*
-
-!.gitignore
-!blink.c
-!Makefile
+*.d
+*.o
+*.bin
+a.out
